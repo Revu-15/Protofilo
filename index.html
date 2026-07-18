@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Polamreddy Revanth Reddy - Data Science, AI & Machine Learning Engineer. Portfolio displaying ML/DL projects, research internships, and education.">
+    <meta name="author" content="Polamreddy Revanth Reddy">
+    <title>POLAMREDDY REVANTH REDDY | AI & Data Science Engineer</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="cyberpunk-theme">
+
+    <!-- Particle Background Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Custom Cursor Glow -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- Header & Sticky Navbar -->
+    <header class="navbar-header">
+        <div class="navbar-container">
+            <a href="#" class="logo-text">
+                REVANTH&nbsp;&nbsp;<span class="cyber-accent">REDDY</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="#hero" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="nav-controls">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="resume.pdf" download class="btn btn-primary btn-sm resume-btn">
+                    <span class="btn-text"><i class="fa-solid fa-download"></i> RESUME</span>
+                    <span class="btn-glitch"></span>
+                </a>
+                <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="section hero-section">
+            <div class="hero-grid-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <div class="welcome-tag animate-slide-in">
+                        <span class="tag-glow">SYSTEM ACTIVE</span>
+                        <span class="pulse-dot"></span>
+                    </div>
+                    <h1 class="hero-title animate-title">
+                        <span class="title-sub">HELLO, I'M</span>
+                        <span class="title-main text-gradient">POLAMREDDY REVANTH REDDY</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        Data Science / AI / Machine Learning Engineer
+                    </h2>
+                    <p class="hero-tagline">
+                        <span class="typing-prefix">Building Future with Code: </span>
+                        <span class="typing-text" id="typing-element"></span><span class="typed-cursor">|</span>
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#projects" class="btn btn-primary">
+                            <span class="btn-text"><i class="fa-solid fa-code-fork"></i> View Projects</span>
+                            <span class="btn-glitch"></span>
+                        </a>
+                        <a href="https://github.com/Revu-15" target="_blank" class="btn btn-secondary">
+                            <span class="btn-text"><i class="fa-brands fa-github"></i> GitHub Profile</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <span class="btn-text"><i class="fa-regular fa-envelope"></i> Contact Me</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="avatar-cyber-ring">
+                        <div class="ring ring-outer"></div>
+                        <div class="ring ring-middle"></div>
+                        <div class="ring ring-inner"></div>
+                        <div class="avatar-box">
+                            <img src="profile.jpg" alt="Polamreddy Revanth Reddy" class="profile-photo">
+                            <div class="status-overlay">
+                                <span class="lbl">AI STATUS:</span>
+                                <span class="val">ACTIVE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <a href="#about" aria-label="Scroll Down">
+                    <span class="mouse-icon">
+                        <span class="wheel"></span>
+                    </span>
+                    <span class="scroll-arrow"></span>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-gradient">01. About Me</h2>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-text-content">
+                        <p class="lead-text">
+                            Hi, I’m <span class="text-glow">Polamreddy Revanth Reddy</span>, a passionate Full Stack Developer focused on building modern, scalable, and user-friendly web applications.
+                        </p>
+                        <p>
+                            I enjoy turning ideas into real digital solutions through clean code and creative design. Currently, I am continuously learning and improving my skills in both frontend and backend technologies to become an industry-ready developer.
+                        </p>
+                        <p>
+                            With a strong academic focus on Data Science and Machine Learning, I bridge the gap between complex AI algorithms and interactive, modern web user interfaces.
+                        </p>
+                    </div>
+                    
+                    <div class="about-card-container">
+                        <div class="glass-card profile-stat-card tilt-card">
+                            <div class="card-glow"></div>
+                            <div class="card-content">
+                                <div class="profile-header">
+                                    <div class="status-indicator online"></div>
+                                    <span class="profile-tag">SYSTEM PROFILE // INFO</span>
+                                </div>
+                                <ul class="profile-stats-list">
+                                    <li>
+                                        <div class="stat-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">Role Type</span>
+                                            <span class="stat-value">Fresher / Intern</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">Education</span>
+                                            <span class="stat-value">B.Tech CSE (Honours) (DS)</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">Graduation Year</span>
+                                            <span class="stat-value">2027</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="stat-icon"><i class="fa-solid fa-bolt"></i></div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">Core Ability</span>
+                                            <span class="stat-value">Fast Learner & Adaptable</span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="stat-icon"><i class="fa-solid fa-people-group"></i></div>
+                                        <div class="stat-info">
+                                            <span class="stat-label">Collaboration</span>
+                                            <span class="stat-value">Team Player</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-gradient">02. Core Systems</h2>
+                    <p class="section-subtitle">Technical Skillset & Framework Matrix</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <!-- Programming Languages -->
+                    <div class="glass-card skill-card tilt-card" data-glow-color="#00f2fe">
+                        <div class="card-glow"></div>
+                        <div class="skill-category-header">
+                            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+                            <h3>Languages</h3>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-badge" data-tooltip="Primary backend & ML language">Python</span>
+                            <span class="tech-badge" data-tooltip="Relational database queries">SQL</span>
+                            <span class="tech-badge" data-tooltip="System level programming">C</span>
+                            <span class="tech-badge" data-tooltip="Data structures & systems">C++</span>
+                            <span class="tech-badge" data-tooltip="Statistical analysis">R</span>
+                        </div>
+                    </div>
+
+                    <!-- AI & ML -->
+                    <div class="glass-card skill-card tilt-card" data-glow-color="#ec008c">
+                        <div class="card-glow"></div>
+                        <div class="skill-category-header">
+                            <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+                            <h3>AI & Machine Learning</h3>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-badge" data-tooltip="Supervised & Unsupervised learning">Machine Learning</span>
+                            <span class="tech-badge" data-tooltip="Neural Networks & Deep Architectures">Deep Learning</span>
+                            <span class="tech-badge" data-tooltip="CNNs & Image classification">Computer Vision</span>
+                            <span class="tech-badge" data-tooltip="Q-Learning & Agent Policies">Reinforcement Learning</span>
+                            <span class="tech-badge" data-tooltip="LLMs & Diffusion modeling">Generative AI</span>
+                            <span class="tech-badge" data-tooltip="Text mining & Tokenization">Natural Language Processing (NLP)</span>
+                            <span class="tech-badge" data-tooltip="Categorical prediction models">Classification</span>
+                            <span class="tech-badge" data-tooltip="Continuous value estimation">Regression</span>
+                        </div>
+                    </div>
+
+                    <!-- Data Science -->
+                    <div class="glass-card skill-card tilt-card" data-glow-color="#00ffcc">
+                        <div class="card-glow"></div>
+                        <div class="skill-category-header">
+                            <div class="skill-icon"><i class="fa-solid fa-chart-line"></i></div>
+                            <h3>Data Science</h3>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-badge" data-tooltip="Handling nulls & Outlier removal">Data Cleaning</span>
+                            <span class="tech-badge" data-tooltip="Discovering trends & Correlations">Exploratory Data Analysis (EDA)</span>
+                            <span class="tech-badge" data-tooltip="Scaling & Feature selection">Feature Engineering</span>
+                            <span class="tech-badge" data-tooltip="Interactive plotting & Reports">Data Visualization</span>
+                            <span class="tech-badge" data-tooltip="Forecasting future trends">Predictive Modeling</span>
+                            <span class="tech-badge" data-tooltip="Hypothesis testing & Distributions">Statistical Analysis</span>
+                        </div>
+                    </div>
+
+                    <!-- Libraries & Frameworks -->
+                    <div class="glass-card skill-card tilt-card" data-glow-color="#7303c0">
+                        <div class="card-glow"></div>
+                        <div class="skill-category-header">
+                            <div class="skill-icon"><i class="fa-solid fa-cubes"></i></div>
+                            <h3>Libraries & Frameworks</h3>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-badge" data-tooltip="N-dimensional arrays">NumPy</span>
+                            <span class="tech-badge" data-tooltip="DataFrames & Manipulation">Pandas</span>
+                            <span class="tech-badge" data-tooltip="Classical ML algorithms">Scikit-learn</span>
+                            <span class="tech-badge" data-tooltip="Neural Network modeling">TensorFlow</span>
+                            <span class="tech-badge" data-tooltip="Research-focused Deep Learning">PyTorch</span>
+                            <span class="tech-badge" data-tooltip="Static 2D visualization">Matplotlib</span>
+                            <span class="tech-badge" data-tooltip="Statistical charts">Seaborn</span>
+                            <span class="tech-badge" data-tooltip="Micro web framework">Flask</span>
+                            <span class="tech-badge" data-tooltip="Asynchronous REST APIs">FastAPI</span>
+                            <span class="tech-badge" data-tooltip="Data dashboard UI builder">Streamlit</span>
+                        </div>
+                    </div>
+
+                    <!-- Frontend Development -->
+                    <div class="glass-card skill-card tilt-card" data-glow-color="#4facfe">
+                        <div class="card-glow"></div>
+                        <div class="skill-category-header">
+                            <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                            <h3>Frontend Development</h3>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-badge" data-tooltip="Semantic webpage structure">HTML5</span>
+                            <span class="tech-badge" data-tooltip="Modern UI layouts & styling">CSS3</span>
+                            <span class="tech-badge" data-tooltip="Dynamic client side script">JavaScript</span>
+                            <span class="tech-badge" data-tooltip="Component-based library">React.js</span>
+                            <span class="tech-badge" data-tooltip="Utility-first styling CSS framework">Tailwind CSS</span>
+                            <span class="tech-badge" data-tooltip="Responsive web layouts">Bootstrap</span>
+                        </div>
+                    </div>
+
+                    <!-- Backend Development -->
+                    <div class="glass-card skill-card tilt-card" data-glow-color="#0052d4">
+                        <div class="card-glow"></div>
+                        <div class="skill-category-header">
+                            <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+                            <h3>Backend Development</h3>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-badge" data-tooltip="Lightweight servers">Flask</span>
+                            <span class="tech-badge" data-tooltip="Fast type-safe server endpoints">FastAPI</span>
+                            <span class="tech-badge" data-tooltip="JSON/XML endpoints integration">REST APIs</span>
+                        </div>
+                    </div>
+
+                    <!-- Databases -->
+                    <div class="glass-card skill-card tilt-card" data-glow-color="#00c6ff">
+                        <div class="card-glow"></div>
+                        <div class="skill-category-header">
+                            <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                            <h3>Databases</h3>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-badge" data-tooltip="Relational MySQL Database">MySQL</span>
+                            <span class="tech-badge" data-tooltip="Document-based NoSQL database">MongoDB</span>
+                        </div>
+                    </div>
+
+                    <!-- Cloud & Deployment -->
+                    <div class="glass-card skill-card tilt-card" data-glow-color="#f7797d">
+                        <div class="card-glow"></div>
+                        <div class="skill-category-header">
+                            <div class="skill-icon"><i class="fa-solid fa-cloud"></i></div>
+                            <h3>Cloud & Deployment</h3>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-badge" data-tooltip="Amazon Web Services (EC2, S3)">AWS</span>
+                            <span class="tech-badge" data-tooltip="IBM Cloud Platform">IBM Cloud</span>
+                            <span class="tech-badge" data-tooltip="Full stack application host">Render</span>
+                            <span class="tech-badge" data-tooltip="Modern frontend deployment">Netlify</span>
+                            <span class="tech-badge" data-tooltip="Static sites host">GitHub Pages</span>
+                            <span class="tech-badge" data-tooltip="CI/CD workflows">GitHub Actions</span>
+                        </div>
+                    </div>
+
+                    <!-- Developer Tools -->
+                    <div class="glass-card skill-card tilt-card" data-glow-color="#f7797d">
+                        <div class="card-glow"></div>
+                        <div class="skill-category-header">
+                            <div class="skill-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <h3>Developer Tools</h3>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-badge" data-tooltip="Version control system">Git</span>
+                            <span class="tech-badge" data-tooltip="Remote repository hosting">GitHub</span>
+                            <span class="tech-badge" data-tooltip="Development text editor">VS Code</span>
+                            <span class="tech-badge" data-tooltip="Interactive python notebooks">Jupyter Notebook</span>
+                            <span class="tech-badge" data-tooltip="Business intelligence dashboard">Power BI</span>
+                            <span class="tech-badge" data-tooltip="Basic spreadsheet analytics">Microsoft Excel</span>
+                        </div>
+                    </div>
+
+                    <!-- Core Computer Science -->
+                    <div class="glass-card skill-card tilt-card" data-glow-color="#00f2fe">
+                        <div class="card-glow"></div>
+                        <div class="skill-category-header">
+                            <div class="skill-icon"><i class="fa-solid fa-gears"></i></div>
+                            <h3>Core CS Concepts</h3>
+                        </div>
+                        <div class="skill-badges">
+                            <span class="tech-badge" data-tooltip="Algorithms efficiency & Complexity">Data Structures & Algorithms</span>
+                            <span class="tech-badge" data-tooltip="Inheritance, Encapsulation, Polymorphism">Object-Oriented Programming (OOP)</span>
+                            <span class="tech-badge" data-tooltip="Relational logic, Schemas & Normalization">DBMS</span>
+                            <span class="tech-badge" data-tooltip="Processes, Memory management & Threads">Operating Systems</span>
+                            <span class="tech-badge" data-tooltip="Analytical approach to complex tasks">Problem Solving</span>
+                            <span class="tech-badge" data-tooltip="Mobile-first web layouts">Responsive Web Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-gradient">03. Project Archives</h2>
+                    <p class="section-subtitle">Real-World Models & Web Applications Deployed</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1: Sepsis Detection -->
+                    <div class="glass-card project-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-number">01</div>
+                            <h3 class="project-title">Sepsis Prediction ML System</h3>
+                        </div>
+                        <p class="project-desc">
+                            Developed an end-to-end Machine Learning application for early sepsis prediction using ICU patient clinical data. Implemented classification models, performed feature engineering, and deployed using a Flask web application.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="chip">Python</span>
+                            <span class="chip">Scikit-learn</span>
+                            <span class="chip">Flask</span>
+                            <span class="chip">XGBoost</span>
+                            <span class="chip">Pandas</span>
+                            <span class="chip">NumPy</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Revu-15/Sepsis-Detection-using-Machine-Learning" target="_blank" class="project-link-btn" title="View Source Code">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <span class="project-link-btn disabled-btn" title="Localhost Host Only">
+                                <i class="fa-solid fa-laptop-code"></i> Localhost App
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Recyclable Waste Materials -->
+                    <div class="glass-card project-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-number">02</div>
+                            <h3 class="project-title">AI Waste Management CV</h3>
+                        </div>
+                        <p class="project-desc">
+                            Developed an AI-powered smart waste management application that automatically classifies recyclable waste materials using Computer Vision and Deep Learning (CNN) models.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="chip">Python</span>
+                            <span class="chip">TensorFlow</span>
+                            <span class="chip">CNN</span>
+                            <span class="chip">OpenCV</span>
+                            <span class="chip">Deep Learning</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Revu-15/Recyclable-Waste-Materials-for-Smart-Waste-Management" target="_blank" class="project-link-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://recyclable-waste-materials-for-smar.vercel.app/" target="_blank" class="project-link-btn active-demo">
+                                <i class="fa-solid fa-square-arrow-up-right"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Crop Disease Advisory System -->
+                    <div class="glass-card project-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-number">03</div>
+                            <h3 class="project-title">Crop Disease Advisory System</h3>
+                        </div>
+                        <p class="project-desc">
+                            Developed an AI crop disease detection system using CNN to identify plant diseases from leaf images and provide automated advisory. Deployed for real-time diagnostics.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="chip">Python</span>
+                            <span class="chip">TensorFlow</span>
+                            <span class="chip">CNN</span>
+                            <span class="chip">Flask</span>
+                            <span class="chip">Render</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Revu-15/crop-disease-advisory-system" target="_blank" class="project-link-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://revu-15.github.io/crop-disease-advisory-system/" target="_blank" class="project-link-btn active-demo">
+                                <i class="fa-solid fa-square-arrow-up-right"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Flappy Bird RL -->
+                    <div class="glass-card project-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-number">04</div>
+                            <h3 class="project-title">Flappy Bird DQN RL Agent</h3>
+                        </div>
+                        <p class="project-desc">
+                            Designed and trained a Deep Q-Network (DQN) Reinforcement Learning agent capable of learning and playing Flappy Bird autonomously using Experience Replay techniques.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="chip">Python</span>
+                            <span class="chip">Reinforcement Learning</span>
+                            <span class="chip">DQN</span>
+                            <span class="chip">PyGame</span>
+                            <span class="chip">TensorFlow</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Revu-15/Flappy-Bird-RL-Agent" target="_blank" class="project-link-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://flappy-bird-rl-agent-revanthreddy15.streamlit.app/" target="_blank" class="project-link-btn active-demo">
+                                <i class="fa-solid fa-square-arrow-up-right"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Market Trend Analysis Dashboard -->
+                    <div class="glass-card project-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-number">05</div>
+                            <h3 class="project-title">Market Trend Dashboard</h3>
+                        </div>
+                        <p class="project-desc">
+                            Built an interactive market trend analysis dashboard that generates actionable insights using analytical frameworks, charts, and statistical aggregations.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="chip">Python</span>
+                            <span class="chip">Pandas</span>
+                            <span class="chip">Plotly</span>
+                            <span class="chip">Matplotlib</span>
+                            <span class="chip">Streamlit</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Revu-15/Market-trend-analysis" target="_blank" class="project-link-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://market-trend-analysis-revanth-15.streamlit.app/" target="_blank" class="project-link-btn active-demo">
+                                <i class="fa-solid fa-square-arrow-up-right"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Student Performance Indicator -->
+                    <div class="glass-card project-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-number">06</div>
+                            <h3 class="project-title">Academic Performance Predictor</h3>
+                        </div>
+                        <p class="project-desc">
+                            Built an end-to-end Machine Learning pipeline to predict student academic scores using regression models based on demographic and academic variables. Deployed on Render.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="chip">Python</span>
+                            <span class="chip">Scikit-learn</span>
+                            <span class="chip">Flask</span>
+                            <span class="chip">Pandas</span>
+                            <span class="chip">Render</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Revu-15/Student-Performance-Indicator" target="_blank" class="project-link-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://student-performance-indicator-bvyl.onrender.com/" target="_blank" class="project-link-btn active-demo">
+                                <i class="fa-solid fa-square-arrow-up-right"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 7: QR Code Generator -->
+                    <div class="glass-card project-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-number">07</div>
+                            <h3 class="project-title">Dynamic QR Generator</h3>
+                        </div>
+                        <p class="project-desc">
+                            Developed a lightweight responsive web application that generates high-fidelity downloadable QR codes for URLs, contact credentials, and custom text inputs.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="chip">Python</span>
+                            <span class="chip">Streamlit</span>
+                            <span class="chip">QRCode Library</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Revu-15/QR-Code-Generator" target="_blank" class="project-link-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://qr-code-using-ml-revanthreddy.streamlit.app/" target="_blank" class="project-link-btn active-demo">
+                                <i class="fa-solid fa-square-arrow-up-right"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 8: Weather Tracker -->
+                    <div class="glass-card project-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-number">08</div>
+                            <h3 class="project-title">Real-Time Weather Tracker</h3>
+                        </div>
+                        <p class="project-desc">
+                            Created a responsive vanilla JS weather application that fetches and displays live weather forecasts, wind rates, and humidity using OpenWeather REST APIs.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="chip">HTML5</span>
+                            <span class="chip">CSS3</span>
+                            <span class="chip">JavaScript</span>
+                            <span class="chip">Weather API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Revu-15/Weather-Tracker" target="_blank" class="project-link-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://wheatherapprevanthreddy.netlify.app/" target="_blank" class="project-link-btn active-demo">
+                                <i class="fa-solid fa-square-arrow-up-right"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 9: Image Search Engine -->
+                    <div class="glass-card project-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="project-header">
+                            <div class="project-number">09</div>
+                            <h3 class="project-title">AI Image Search Engine</h3>
+                        </div>
+                        <p class="project-desc">
+                            Built an AI-powered image search engine that retrieves visually similar images using deep learning embeddings and optimized vector matching interfaces.
+                        </p>
+                        <div class="project-tech-stack">
+                            <span class="chip">Python</span>
+                            <span class="chip">Flask</span>
+                            <span class="chip">Deep Learning</span>
+                            <span class="chip">Computer Vision</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Revu-15/Image-Search-Engine" target="_blank" class="project-link-btn">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                            <a href="https://imagesearchenginerevanthreddy.netlify.app/" target="_blank" class="project-link-btn active-demo">
+                                <i class="fa-solid fa-square-arrow-up-right"></i> Live Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Systems / Coming Soon -->
+                <div class="future-projects-container">
+                    <h3 class="future-title"><i class="fa-solid fa-satellite-dish"></i> Future R&D Initiatives</h3>
+                    <div class="future-grid">
+                        <div class="future-item">
+                            <span class="item-title">AI-Powered Autonomous Data Analyst</span>
+                            <span class="status-badge">Planning</span>
+                        </div>
+                        <div class="future-item">
+                            <span class="item-title">Full Stack E-Commerce Web App</span>
+                            <span class="status-badge">Development</span>
+                        </div>
+                        <div class="future-item">
+                            <span class="item-title">Task Management System</span>
+                            <span class="status-badge">Prototype</span>
+                        </div>
+                        <div class="future-item">
+                            <span class="item-title">Smart Healthcare Platform</span>
+                            <span class="status-badge">Research</span>
+                        </div>
+                        <div class="future-item">
+                            <span class="item-title">AI Interview Prep Platform</span>
+                            <span class="status-badge">Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-gradient">04. Professional Experience</h2>
+                    <p class="section-subtitle">Internships in AI, Machine Learning, and Healthcare</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="experience-timeline">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item left-item">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card experience-card">
+                            <span class="exp-date">// JAN 2026 – JUN 2026</span>
+                            <h3 class="exp-title">Research Intern</h3>
+                            <h4 class="exp-company text-glow">IIT Tirupati – SEVA Lab (Remote)</h4>
+                            <p class="exp-desc">
+                                Worked under Dr. Chalavadi Vishnu on "Secure and Efficient Vision for Autonomous Systems". Developed and optimized deep learning models for computer vision applications. Improved model performance for real-world autonomous vision systems using modern AI techniques.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2 -->
+                    <div class="timeline-item right-item">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card experience-card">
+                            <span class="exp-date">// FEB 2026 – MAY 2026</span>
+                            <h3 class="exp-title">AI & Data Analytics Intern</h3>
+                            <h4 class="exp-company text-glow">Scholars' Minds, Tirupati (Offline)</h4>
+                            <p class="exp-desc">
+                                Worked on real-world Machine Learning and Data Analytics projects. Built end-to-end data pipelines including preprocessing, EDA, feature engineering, and model development. Applied AI techniques to solve practical business and data-driven problems.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 3 -->
+                    <div class="timeline-item left-item">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card experience-card">
+                            <span class="exp-date">// MAY 2025 – JUL 2025</span>
+                            <h3 class="exp-title">Research Intern</h3>
+                            <h4 class="exp-company text-glow">IIT Madras – Dept. of Computer Science & Engineering</h4>
+                            <p class="exp-desc">
+                                Contributed to healthcare AI research by developing predictive machine learning models. Worked with TensorFlow, PyTorch, and Scikit-learn for deep learning and data analysis. Enhanced model accuracy through preprocessing, feature engineering, and hyperparameter tuning.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Experience 4 -->
+                    <div class="timeline-item right-item">
+                        <div class="timeline-dot"></div>
+                        <div class="glass-card experience-card">
+                            <span class="exp-date">// APR 2025 – MAY 2025</span>
+                            <h3 class="exp-title">AI Intern</h3>
+                            <h4 class="exp-company text-glow">Edunet Foundation (Supported by Microsoft & AICTE)</h4>
+                            <p class="exp-desc">
+                                Completed an industry-focused internship in Artificial Intelligence and Machine Learning. Built AI-based applications using Python and machine learning libraries. Gained hands-on experience in model development, data analysis, cloud technologies, and industry best practices.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-gradient">05. Education</h2>
+                    <p class="section-subtitle">Academic Qualifications & Foundations</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="education-grid">
+                    <!-- Education 1 -->
+                    <div class="glass-card education-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="edu-year">2023 - 2027</div>
+                        <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <h3 class="edu-degree">B.Tech (Honours) - CSE (Data Science)</h3>
+                        <h4 class="edu-school">Chhattisgarh Swami Vivekanand Technical University, Bhilai</h4>
+                        <div class="edu-stats">
+                            <span class="edu-stat">CGPA: <strong>7.8/10</strong> (Till 6th Sem)</span>
+                            <span class="edu-stat">Expected Graduation: <strong>2027</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Education 2 -->
+                    <div class="glass-card education-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="edu-year">2021 - 2023</div>
+                        <div class="edu-icon"><i class="fa-solid fa-school"></i></div>
+                        <h3 class="edu-degree">Higher Secondary (Class XII)</h3>
+                        <h4 class="edu-school">Narayana Junior College</h4>
+                        <div class="edu-stats">
+                            <span class="edu-stat">Percentage: <strong>89.6%</strong></span>
+                            <span class="edu-stat">Stream: <strong>MPC</strong></span>
+                        </div>
+                    </div>
+
+                    <!-- Education 3 -->
+                    <div class="glass-card education-card tilt-card">
+                        <div class="card-glow"></div>
+                        <div class="edu-year">2020 - 2021</div>
+                        <div class="edu-icon"><i class="fa-solid fa-building-columns"></i></div>
+                        <h3 class="edu-degree">Secondary (Class X)</h3>
+                        <h4 class="edu-school">Narayana School</h4>
+                        <div class="edu-stats">
+                            <span class="edu-stat">Percentage: <strong>99.5%</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section certifications-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-gradient">06. Certifications</h2>
+                    <p class="section-subtitle">Verified Accomplishments & Professional Training</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="certifications-grid">
+                    <!-- Cert 1 -->
+                    <div class="glass-card cert-card tilt-card" data-glow-color="#00f2fe">
+                        <div class="card-glow"></div>
+                        <div class="cert-icon"><i class="fa-solid fa-award"></i></div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer text-glow">HackerRank</span>
+                        </div>
+                        <h3 class="cert-title">Python (Basic) Certificate</h3>
+                        <p class="cert-desc">
+                            Verified certificate for Python fundamentals including data types, control flow, functions, and basic algorithmic problem-solving skills.
+                        </p>
+                    </div>
+
+                    <!-- Cert 2 -->
+                    <div class="glass-card cert-card tilt-card" data-glow-color="#ec008c">
+                        <div class="card-glow"></div>
+                        <div class="cert-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer text-glow">Mindenious</span>
+                        </div>
+                        <h3 class="cert-title">Data Science Workshop</h3>
+                        <p class="cert-desc">
+                            Hands-on workshop covering data preprocessing, exploratory data analysis, machine learning fundamentals, and model evaluation techniques.
+                        </p>
+                    </div>
+
+                    <!-- Cert 3 -->
+                    <div class="glass-card cert-card tilt-card" data-glow-color="#00ffcc">
+                        <div class="card-glow"></div>
+                        <div class="cert-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="cert-meta">
+                            <span class="cert-issuer text-glow">Krish Naik</span>
+                        </div>
+                        <h3 class="cert-title">Complete Python for DS & ML</h3>
+                        <p class="cert-desc">
+                            Comprehensive course covering Python, ML algorithms, data preprocessing, model deployment, and real-world project implementation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title text-gradient">07. Establish Connection</h2>
+                    <p class="section-subtitle">Get in Touch or Trigger a Collaboration</p>
+                    <div class="section-divider"></div>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info-panel">
+                        <div class="glass-card connection-card">
+                            <h3>Let's Collaborate</h3>
+                            <p>
+                                I am currently seeking full-time opportunities or internships in Data Science, Machine Learning, and Full-Stack Development. Have an idea, project, or open role? Get in touch!
+                            </p>
+                            
+                            <div class="contact-details">
+                                <a href="mailto:polamreddyrevanth.82@gmail.com" class="detail-link">
+                                    <div class="detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                                    <div class="detail-text">
+                                        <span class="lbl">Email</span>
+                                        <span class="val">polamreddyrevanth.82@gmail.com</span>
+                                    </div>
+                                </a>
+                                <a href="tel:+919440829762" class="detail-link">
+                                    <div class="detail-icon"><i class="fa-solid fa-phone"></i></div>
+                                    <div class="detail-text">
+                                        <span class="lbl">Phone</span>
+                                        <span class="val">+91-9440829762</span>
+                                    </div>
+                                </a>
+                                <a href="https://linkedin.com/in/polamreddy-revanth-reedy-30b147292/" target="_blank" class="detail-link">
+                                    <div class="detail-icon"><i class="fa-brands fa-linkedin"></i></div>
+                                    <div class="detail-text">
+                                        <span class="lbl">LinkedIn</span>
+                                        <span class="val">in/polamreddy-revanth-reedy</span>
+                                    </div>
+                                </a>
+                                <a href="https://github.com/Revu-15" target="_blank" class="detail-link">
+                                    <div class="detail-icon"><i class="fa-brands fa-github"></i></div>
+                                    <div class="detail-text">
+                                        <span class="lbl">GitHub</span>
+                                        <span class="val">github.com/Revu-15</span>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="connection-status-block">
+                                <div class="pulse-ring">
+                                    <div class="ring-pulse animate-ping"></div>
+                                    <div class="ring-core"></div>
+                                </div>
+                                <span class="status-msg">AVAILABLE FOR NEW PROJECTS // 2026</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-panel">
+                        <div class="glass-card form-card">
+                            <form id="contact-form" action="#" method="POST">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-name">Sender Name</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" id="contact-name" name="name" required placeholder="John Doe">
+                                            <span class="input-glow-line"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-email">Secure Email</label>
+                                        <div class="input-wrapper">
+                                            <input type="email" id="contact-email" name="email" required placeholder="john@example.com">
+                                            <span class="input-glow-line"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-subject">Topic / Subject</label>
+                                        <div class="input-wrapper">
+                                            <input type="text" id="contact-subject" name="subject" required placeholder="Collaboration Proposal">
+                                            <span class="input-glow-line"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-message">Transmission Content</label>
+                                        <div class="input-wrapper">
+                                            <textarea id="contact-message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+                                            <span class="input-glow-line"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary btn-full">
+                                        <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+                                        <span class="btn-glitch"></span>
+                                    </button>
+                                    <a href="mailto:polamreddyrevanth.82@gmail.com?subject=Hiring Inquiry" class="btn btn-outline btn-full text-center">
+                                        <span class="btn-text"><i class="fa-solid fa-briefcase"></i> Hire Me Direct</span>
+                                    </a>
+                                </div>
+                            </form>
+                            <div class="form-feedback-msg" id="form-feedback"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-area">
+        <div class="container footer-container">
+            <div class="footer-branding">
+                <a href="#" class="logo-text">
+                    REVANTH&nbsp;&nbsp;<span class="cyber-accent">REDDY</span>
+                </a>
+                <p>Data Science & AI Engineer portfolio designed for performance and recruitability.</p>
+            </div>
+            
+            <div class="footer-socials">
+                <a href="https://github.com/Revu-15" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/polamreddy-revanth-reedy-30b147292/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:polamreddyrevanth.82@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright-text">&copy; 2026 POLAMREDDY REVANTH REDDY. Built with passion and code.</p>
+                <div class="system-time-stamp">
+                    <span class="time-lbl">SYS TIME:</span>
+                    <span class="time-val" id="footer-systime">18:32:35 UTC</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
