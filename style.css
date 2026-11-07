@@ -614,8 +614,8 @@ body.dark-mode .hero-ambient-mesh::after {
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.15fr 0.95fr;
-    gap: 48px;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 40px;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -814,8 +814,8 @@ body.dark-mode .hero-ambient-mesh::after {
 
 .avatar-halo-frame {
     position: relative;
-    width: 420px;
-    height: 420px;
+    width: 500px;
+    height: 500px;
     max-width: 100%;
     display: flex;
     justify-content: center;
@@ -824,9 +824,9 @@ body.dark-mode .hero-ambient-mesh::after {
 
 .avatar-ambient-glow {
     position: absolute;
-    inset: -25px;
+    inset: -30px;
     background: radial-gradient(circle, var(--primary-glow) 0%, var(--accent-glow) 50%, transparent 70%);
-    filter: blur(35px);
+    filter: blur(40px);
     z-index: 0;
     border-radius: 50%;
 }
@@ -841,9 +841,9 @@ body.dark-mode .hero-ambient-mesh::after {
 
 .avatar-ring-inner {
     position: absolute;
-    inset: 14px;
+    inset: 16px;
     border-radius: 50%;
-    border: 2px solid var(--border);
+    border: 2.5px solid var(--border);
     border-top-color: var(--primary);
     border-bottom-color: var(--accent);
     animation: rotateCounter 18s linear infinite;
@@ -860,13 +860,13 @@ body.dark-mode .hero-ambient-mesh::after {
 
 .avatar-inner-box {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 440px;
+    height: 440px;
     border-radius: 50%;
     overflow: hidden;
     background: var(--surface);
-    border: 5px solid var(--surface);
-    box-shadow: var(--shadow-xl);
+    border: 6px solid var(--surface);
+    box-shadow: 0 20px 50px -10px rgba(124, 58, 237, 0.25), var(--shadow-xl);
     z-index: 1;
 }
 
@@ -2410,13 +2410,15 @@ textarea.form-input-control {
     }
 
     .avatar-halo-frame {
-        width: 370px;
-        height: 370px;
+        width: 420px;
+        height: 420px;
+        max-width: 90vw;
     }
 
     .avatar-inner-box {
-        width: 310px;
-        height: 310px;
+        width: 370px;
+        height: 370px;
+        max-width: 80vw;
     }
 
     .hero-cta-group,
@@ -2536,13 +2538,15 @@ textarea.form-input-control {
     }
 
     .avatar-halo-frame {
-        width: 300px;
-        height: 300px;
+        width: 340px;
+        height: 340px;
+        max-width: 88vw;
     }
 
     .avatar-inner-box {
-        width: 250px;
-        height: 250px;
+        width: 290px;
+        height: 290px;
+        max-width: 76vw;
     }
 
     .direct-role-link {
