@@ -146,6 +146,17 @@ input, textarea, select {
     font-family: inherit;
 }
 
+/* --- Falling Stars Live Background Canvas --- */
+#falling-stars-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+
 /* Scroll progress bar */
 #scroll-progress {
     position: fixed;
@@ -210,6 +221,7 @@ body.dark-mode .cursor-glow {
 .section {
     padding: var(--space-4xl) 0;
     position: relative;
+    z-index: 1;
     scroll-margin-top: 100px;
 }
 
@@ -2244,6 +2256,8 @@ textarea.form-input-control {
 
 /* --- 13. Footer Area --- */
 .site-footer {
+    position: relative;
+    z-index: 1;
     background: var(--surface);
     border-top: 1px solid var(--border);
     padding: 56px 0 32px;

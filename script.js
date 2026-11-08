@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyTheme(theme) {
         const iconClass = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-        
+
         if (theme === 'dark') {
             document.body.classList.add('dark-mode');
         } else {
@@ -558,5 +558,228 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+    }
+
+    // --- 17. Live Falling Stars & Shooting Stars Particle Engine ---
+    const starCanvas = document.getElementById('falling-stars-canvas');
+    if (starCanvas) {
+        const ctx = starCanvas.getContext('2d');
+        let width = 0;
+        let height = 0;
+        let dpr = Math.min(window.devicePixelRatio || 1, 2);
+        let animationFrameId = null;
+        let isTabActive = true;
+
+        let mouseX = -1000;
+        let mouseY = -1000;
+
+        function resizeCanvas() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            starCanvas.width = width * dpr;
+            starCanvas.height = height * dpr;
+            ctx.scale(dpr, dpr);
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        window.addEventListener('mouseleave', () => {
+            mouseX = -1000;
+            mouseY = -1000;
+        });
+
+        const isDarkMode = () => document.body.classList.contains('dark-mode');
+
+        // Star particles count: ~70 on desktop, ~35 on mobile
+        const starCount = window.innerWidth < 768 ? 36 : 72;
+        const stars = [];
+
+        class FallingStar {
+            constructor(initRandom = true) {
+                this.reset(initRandom);
+            }
+
+            reset(initRandom = false) {
+                this.x = Math.random() * (width + 60);
+                this.y = initRandom ? Math.random() * height : -20 - Math.random() * 30;
+                this.radius = 0.8 + Math.random() * 1.6;
+                this.speedY = 0.5 + Math.random() * 1.3;
+                this.speedX = -0.15 - Math.random() * 0.35;
+                this.trail = 10 + Math.random() * 16;
+                this.baseAlpha = 0.25 + Math.random() * 0.55;
+                this.alpha = this.baseAlpha;
+                this.pulsePhase = Math.random() * Math.PI * 2;
+                this.pulseSpeed = 0.015 + Math.random() * 0.025;
+                this.tintType = Math.floor(Math.random() * 4);
+            }
+
+            update() {
+                this.y += this.speedY;
+                this.x += this.speedX;
+                this.pulsePhase += this.pulseSpeed;
+                this.alpha = Math.max(0.1, Math.min(1, this.baseAlpha + Math.sin(this.pulsePhase) * 0.22));
+
+                const dx = this.x - mouseX;
+                const dy = this.y - mouseY;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 120 && dist > 0) {
+                    const force = (120 - dist) / 120;
+                    this.x += (dx / dist) * force * 1.5;
+                    this.y += (dy / dist) * force * 1.5;
+                    this.alpha = Math.min(1, this.alpha + force * 0.35);
+                }
+
+                if (this.y > height + 30 || this.x < -30) {
+                    this.reset(false);
+                }
+            }
+
+            draw() {
+                const dark = isDarkMode();
+                let color;
+                if (dark) {
+                    if (this.tintType === 0) color = `rgba(167, 139, 250, ${this.alpha})`;
+                    else if (this.tintType === 1) color = `rgba(34, 211, 238, ${this.alpha})`;
+                    else if (this.tintType === 2) color = `rgba(253, 224, 71, ${this.alpha})`;
+                    else color = `rgba(255, 255, 255, ${this.alpha})`;
+                } else {
+                    if (this.tintType === 0) color = `rgba(124, 58, 237, ${this.alpha * 0.85})`;
+                    else if (this.tintType === 1) color = `rgba(6, 182, 212, ${this.alpha * 0.85})`;
+                    else if (this.tintType === 2) color = `rgba(217, 119, 6, ${this.alpha * 0.85})`;
+                    else color = `rgba(109, 40, 217, ${this.alpha * 0.75})`;
+                }
+
+                const tailX = this.x - this.speedX * this.trail;
+                const tailY = this.y - this.speedY * this.trail;
+                const grad = ctx.createLinearGradient(tailX, tailY, this.x, this.y);
+                grad.addColorStop(0, 'rgba(255, 255, 255, 0)');
+                grad.addColorStop(1, color);
+
+                ctx.beginPath();
+                ctx.moveTo(tailX, tailY);
+                ctx.lineTo(this.x, this.y);
+                ctx.strokeStyle = grad;
+                ctx.lineWidth = this.radius * 0.85;
+                ctx.lineCap = 'round';
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = color;
+                ctx.shadowColor = dark ? 'rgba(167, 139, 250, 0.6)' : 'rgba(124, 58, 237, 0.4)';
+                ctx.shadowBlur = this.radius * 3;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        for (let i = 0; i < starCount; i++) {
+            stars.push(new FallingStar(true));
+        }
+
+        const shootingStars = [];
+
+        class ShootingStar {
+            constructor() {
+                this.x = Math.random() * (width * 0.7) + (width * 0.3);
+                this.y = Math.random() * (height * 0.45);
+                this.length = 110 + Math.random() * 130;
+                this.speed = 13 + Math.random() * 7;
+                this.angle = Math.PI * 0.76 + (Math.random() * 0.1 - 0.05);
+                this.dx = Math.cos(this.angle) * this.speed;
+                this.dy = Math.sin(this.angle) * this.speed;
+                this.life = 1;
+                this.decay = 0.012 + Math.random() * 0.01;
+                this.size = 1.8 + Math.random() * 1.2;
+            }
+
+            update() {
+                this.x += this.dx;
+                this.y += this.dy;
+                this.life -= this.decay;
+            }
+
+            draw() {
+                if (this.life <= 0) return;
+                const dark = isDarkMode();
+                const tailX = this.x - Math.cos(this.angle) * this.length * this.life;
+                const tailY = this.y - Math.sin(this.angle) * this.length * this.life;
+
+                const grad = ctx.createLinearGradient(tailX, tailY, this.x, this.y);
+                grad.addColorStop(0, 'rgba(255, 255, 255, 0)');
+                if (dark) {
+                    grad.addColorStop(0.7, `rgba(34, 211, 238, ${this.life * 0.6})`);
+                    grad.addColorStop(1, `rgba(255, 255, 255, ${this.life * 0.95})`);
+                } else {
+                    grad.addColorStop(0.7, `rgba(124, 58, 237, ${this.life * 0.55})`);
+                    grad.addColorStop(1, `rgba(6, 182, 212, ${this.life * 0.85})`);
+                }
+
+                ctx.beginPath();
+                ctx.moveTo(tailX, tailY);
+                ctx.lineTo(this.x, this.y);
+                ctx.strokeStyle = grad;
+                ctx.lineWidth = this.size;
+                ctx.lineCap = 'round';
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size * 1.3, 0, Math.PI * 2);
+                ctx.fillStyle = dark ? `rgba(255, 255, 255, ${this.life})` : `rgba(124, 58, 237, ${this.life})`;
+                ctx.shadowColor = dark ? 'rgba(34, 211, 238, 0.8)' : 'rgba(124, 58, 237, 0.6)';
+                ctx.shadowBlur = 10;
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        let nextShootingStarTime = Date.now() + 2000;
+        function maybeSpawnShootingStar() {
+            const now = Date.now();
+            if (now > nextShootingStarTime) {
+                shootingStars.push(new ShootingStar());
+                nextShootingStarTime = now + 3500 + Math.random() * 3000;
+            }
+        }
+
+        function animate() {
+            if (!isTabActive) return;
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = 0; i < stars.length; i++) {
+                stars[i].update();
+                stars[i].draw();
+            }
+
+            maybeSpawnShootingStar();
+            for (let i = shootingStars.length - 1; i >= 0; i--) {
+                const s = shootingStars[i];
+                s.update();
+                s.draw();
+                if (s.life <= 0) {
+                    shootingStars.splice(i, 1);
+                }
+            }
+
+            animationFrameId = requestAnimationFrame(animate);
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                isTabActive = false;
+                if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            } else {
+                isTabActive = true;
+                nextShootingStarTime = Date.now() + 1500;
+                animate();
+            }
+        });
+
+        animate();
     }
 });
