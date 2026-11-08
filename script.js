@@ -481,84 +481,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- 13. Resume Role Picker Interactive Controller ---
-    const roleBtns = document.querySelectorAll('.role-picker-card-btn');
-    const previewHeading = document.getElementById('preview-role-heading');
-    const previewSummary = document.getElementById('preview-role-summary');
-    const previewChips = document.getElementById('preview-chips-container');
-    const previewPath = document.getElementById('preview-file-path');
-    const previewDownloadBtn = document.getElementById('preview-download-btn');
-
-    const roleDetails = {
-        'software': {
-            role: 'Software Developer',
-            filename: 'Revanth_Software_Developer_Resume.pdf',
-            path: 'public/resumes/Revanth_Software_Developer_Resume.pdf',
-            summary: 'Tailored for Full-Stack & Software Engineering positions. Highlights production platform development for ENX Money at Enterprenex, Node.js, Express, React.js, MySQL, JWT authentication, and REST APIs.',
-            skills: ['Node.js', 'Express.js', 'React.js', 'MySQL', 'MongoDB', 'JWT Auth', 'REST APIs', 'Git Workflows']
-        },
-        'ai': {
-            role: 'AI Developer',
-            filename: 'Revanth_AI_Developer_Resume.pdf',
-            path: 'public/resumes/Revanth_AI_Developer_Resume.pdf',
-            summary: 'Specialized for AI Research & Engineering roles. Highlights research internships at IIT Tirupati (SEVA Lab) and IIT Madras, Deep Learning, Computer Vision, Generative AI, LLMs, and end-to-end model serving.',
-            skills: ['PyTorch', 'TensorFlow', 'Computer Vision', 'Generative AI & LLMs', 'Reinforcement Learning', 'Model Serving', 'FastAPI']
-        },
-        'ml': {
-            role: 'ML Engineer',
-            filename: 'Revanth_ML_Resume_Updated.pdf',
-            path: 'public/resumes/Revanth_ML_Resume_Updated.pdf',
-            summary: 'Focused on core Machine Learning pipelines, model training & evaluation, feature engineering, classification, DQN reinforcement learning, and healthcare prediction models.',
-            skills: ['Scikit-learn', 'TensorFlow', 'XGBoost', 'Feature Engineering', 'SMOTE', 'Flask', 'Model Evaluation', 'DQN']
-        },
-        'data': {
-            role: 'Data Analyst',
-            filename: 'Revanth_Data_Analyst_Resume_Updated.pdf',
-            path: 'public/resumes/Revanth_Data_Analyst_Resume_Updated.pdf',
-            summary: 'Curated for Data Analytics & BI. Highlights EDA pipelines at Scholars\' Minds, 6-day IIT Bhilai DAV workshop instruction, SQL, Power BI, Python (Pandas/Plotly), and statistical modeling.',
-            skills: ['Python (Pandas, NumPy)', 'Power BI', 'SQL', 'Exploratory Data Analysis', 'Statistical Modeling', 'Plotly', 'Excel']
-        },
-        'ui': {
-            role: 'UI / Frontend Developer',
-            filename: 'Revanth_UI_Resume_Updated.pdf',
-            path: 'public/resumes/Revanth_UI_Resume_Updated.pdf',
-            summary: 'Showcases modern responsive web interfaces, component architectures in React.js, Tailwind CSS, vanilla JavaScript, Figma prototyping, and refined visual design systems.',
-            skills: ['React.js', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5 & CSS3', 'Figma Prototyping', 'Responsive Design']
-        }
-    };
-
-    if (roleBtns.length > 0 && previewHeading) {
-        roleBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const key = btn.getAttribute('data-role');
-                const data = roleDetails[key];
-                if (!data) return;
-
-                roleBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                previewHeading.textContent = data.role;
-                previewSummary.textContent = data.summary;
-                if (previewPath) {
-                    previewPath.innerHTML = `<i class="fa-solid fa-file-pdf"></i> ${data.path}`;
-                }
-                if (previewDownloadBtn) {
-                    previewDownloadBtn.href = data.path;
-                    previewDownloadBtn.download = data.filename;
-                    previewDownloadBtn.innerHTML = `<i class="fa-solid fa-arrow-down"></i> Download ${data.role} Resume`;
-                }
-
-                if (previewChips) {
-                    previewChips.innerHTML = '';
-                    data.skills.forEach(s => {
-                        const chip = document.createElement('span');
-                        chip.className = 'preview-skill-tag';
-                        chip.textContent = s;
-                        previewChips.appendChild(chip);
-                    });
-                }
-            });
-        });
+    // --- 13. Software Developer Resume Download ---
+    // Single curated Software Developer Resume active across entire portfolio
+    const resumeDownloadBtn = document.getElementById('preview-download-btn');
+    if (resumeDownloadBtn) {
+        resumeDownloadBtn.href = 'public/resumes/Revanth_Software_Developer_Resume.pdf';
+        resumeDownloadBtn.download = 'Revanth_Software_Developer_Resume.pdf';
     }
 
     // --- 14. Contact Form Validation & Toast Notification ---

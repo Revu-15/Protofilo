@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css?v=5.0">
+    <link rel="stylesheet" href="style.css?v=6.0">
 </head>
 <body>
 
@@ -63,37 +63,11 @@
                     <i class="fa-solid fa-moon"></i>
                 </button>
                 
-                <!-- Resume Dropdown in Nav -->
-                <div class="resume-dropdown-wrap">
-                    <a href="#resume" class="btn-resume-nav" id="nav-resume-btn" aria-haspopup="true" aria-expanded="false" title="Download Tailored Resume">
-                        <i class="fa-solid fa-file-pdf"></i>
-                        <span>Resume</span>
-                        <i class="fa-solid fa-chevron-down" style="font-size: 0.68rem; margin-left: 2px;"></i>
-                    </a>
-                    <div class="resume-dropdown-popover" id="nav-resume-menu">
-                        <div class="popover-header">Targeted Role Resumes</div>
-                        <a href="public/resumes/Revanth_Software_Developer_Resume.pdf" download="Revanth_Software_Developer_Resume.pdf" class="resume-role-item">
-                            <i class="fa-solid fa-laptop-code"></i>
-                            <span>Software Developer</span>
-                        </a>
-                        <a href="public/resumes/Revanth_AI_Developer_Resume.pdf" download="Revanth_AI_Developer_Resume.pdf" class="resume-role-item">
-                            <i class="fa-solid fa-brain"></i>
-                            <span>AI Developer</span>
-                        </a>
-                        <a href="public/resumes/Revanth_ML_Resume_Updated.pdf" download="Revanth_ML_Resume_Updated.pdf" class="resume-role-item">
-                            <i class="fa-solid fa-network-wired"></i>
-                            <span>ML Engineer</span>
-                        </a>
-                        <a href="public/resumes/Revanth_Data_Analyst_Resume_Updated.pdf" download="Revanth_Data_Analyst_Resume_Updated.pdf" class="resume-role-item">
-                            <i class="fa-solid fa-chart-pie"></i>
-                            <span>Data Analyst</span>
-                        </a>
-                        <a href="public/resumes/Revanth_UI_Resume_Updated.pdf" download="Revanth_UI_Resume_Updated.pdf" class="resume-role-item">
-                            <i class="fa-solid fa-palette"></i>
-                            <span>UI / Frontend</span>
-                        </a>
-                    </div>
-                </div>
+                <!-- Direct Resume Download Button in Nav -->
+                <a href="public/resumes/Revanth_Software_Developer_Resume.pdf" download="Revanth_Software_Developer_Resume.pdf" class="btn-resume-nav" title="Download Software Developer Resume">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span>Resume</span>
+                </a>
 
                 <!-- Mobile Menu Button -->
                 <button class="mobile-hamburger-btn" id="mobile-toggle" aria-label="Toggle Mobile Navigation">
@@ -116,7 +90,7 @@
             <li><a href="#skills" class="mobile-nav-link"><i class="fa-solid fa-cubes"></i> Skills</a></li>
             <li><a href="#education" class="mobile-nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
             <li><a href="#certifications" class="mobile-nav-link"><i class="fa-solid fa-award"></i> Certifications</a></li>
-            <li><a href="#resume" class="mobile-nav-link"><i class="fa-solid fa-file-pdf"></i> Resumes</a></li>
+            <li><a href="public/resumes/Revanth_Software_Developer_Resume.pdf" download="Revanth_Software_Developer_Resume.pdf" class="mobile-nav-link"><i class="fa-solid fa-file-pdf"></i> Resume</a></li>
             <li><a href="#contact" class="mobile-nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
         </ul>
         <div style="padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
@@ -153,9 +127,9 @@
                         <a href="#projects" class="btn btn-primary">
                             <span>View Projects</span>
                         </a>
-                        <a href="#resume" class="btn btn-secondary">
+                        <a href="public/resumes/Revanth_Software_Developer_Resume.pdf" download="Revanth_Software_Developer_Resume.pdf" class="btn btn-secondary" title="Download Software Developer Resume">
                             <i class="fa-solid fa-file-arrow-down"></i>
-                            <span>Role Resumes</span>
+                            <span>Download Resume</span>
                         </a>
                     </div>
 
@@ -183,7 +157,7 @@
                         <div class="avatar-ring-outer" aria-hidden="true"></div>
                         <div class="avatar-ring-inner" aria-hidden="true"></div>
                         <div class="avatar-inner-box">
-                            <img src="profile.png" alt="Polamreddy Revanth Reddy" width="500" height="500" loading="eager">
+                            <img src="profile.png" alt="Polamreddy Revanth Reddy" width="310" height="310" loading="eager">
                         </div>
                     </div>
                 </div>
@@ -1032,131 +1006,53 @@
             </div>
         </section>
 
-        <!-- Role-Based Resume Section -->
+        <!-- Software Developer Resume Section -->
         <section id="resume" class="section resume-section">
             <div class="container">
                 <div class="section-header reveal-on-scroll">
-                    <span class="section-badge">Downloads</span>
-                    <h2 class="section-title">Targeted Role Resumes</h2>
-                    <p class="section-subtitle">Select your role specialization to preview specifications and download the matching PDF</p>
+                    <span class="section-badge">Curriculum Vitae</span>
+                    <h2 class="section-title">Software Developer Resume</h2>
+                    <p class="section-subtitle">Download my official resume detailing full-stack engineering, production architectures, and technical competencies</p>
                 </div>
 
-                <div class="resume-picker-layout reveal-on-scroll">
-                    <!-- Left: Role Selector Cards -->
-                    <div class="role-selector-box">
-                        <h3 class="role-box-title">
-                            <i class="fa-solid fa-sliders"></i> Select Role
-                        </h3>
-
-                        <button class="role-picker-card-btn active" data-role="software">
-                            <div class="role-btn-left">
-                                <div class="role-icon-avatar"><i class="fa-solid fa-laptop-code"></i></div>
-                                <div class="role-text-meta">
-                                    <h4>Software Developer</h4>
-                                    <span>Full-Stack, Node.js, Express, React, MySQL</span>
-                                </div>
-                            </div>
-                            <div class="role-radio-circle"></div>
-                        </button>
-
-                        <button class="role-picker-card-btn" data-role="ai">
-                            <div class="role-btn-left">
-                                <div class="role-icon-avatar"><i class="fa-solid fa-brain"></i></div>
-                                <div class="role-text-meta">
-                                    <h4>AI Developer</h4>
-                                    <span>Deep Learning, CV, Generative AI, LLMs</span>
-                                </div>
-                            </div>
-                            <div class="role-radio-circle"></div>
-                        </button>
-
-                        <button class="role-picker-card-btn" data-role="ml">
-                            <div class="role-btn-left">
-                                <div class="role-icon-avatar"><i class="fa-solid fa-network-wired"></i></div>
-                                <div class="role-text-meta">
-                                    <h4>ML Engineer</h4>
-                                    <span>Pipelines, Scikit-learn, XGBoost, DQN</span>
-                                </div>
-                            </div>
-                            <div class="role-radio-circle"></div>
-                        </button>
-
-                        <button class="role-picker-card-btn" data-role="data">
-                            <div class="role-btn-left">
-                                <div class="role-icon-avatar"><i class="fa-solid fa-chart-pie"></i></div>
-                                <div class="role-text-meta">
-                                    <h4>Data Analyst</h4>
-                                    <span>EDA, Power BI, SQL, Python, Statistics</span>
-                                </div>
-                            </div>
-                            <div class="role-radio-circle"></div>
-                        </button>
-
-                        <button class="role-picker-card-btn" data-role="ui">
-                            <div class="role-btn-left">
-                                <div class="role-icon-avatar"><i class="fa-solid fa-palette"></i></div>
-                                <div class="role-text-meta">
-                                    <h4>UI / Frontend</h4>
-                                    <span>React.js, Tailwind, Prototyping, Systems</span>
-                                </div>
-                            </div>
-                            <div class="role-radio-circle"></div>
-                        </button>
-                    </div>
-
-                    <!-- Right: Active Role Preview & Download Card -->
-                    <div class="resume-preview-panel">
+                <div class="resume-single-card-layout reveal-on-scroll">
+                    <div class="resume-preview-panel single-card-panel">
                         <div>
                             <div class="preview-top-bar">
-                                <span class="preview-pill-badge">READY TO DOWNLOAD</span>
-                                <span class="preview-size-badge">PDF &bull; ~66 KB</span>
+                                <span class="preview-pill-badge">OFFICIAL RESUME</span>
+                                <span class="preview-size-badge"><i class="fa-solid fa-file-pdf"></i> PDF &bull; ~66 KB</span>
                             </div>
-                            <h3 class="preview-role-heading" id="preview-role-heading">Software Developer</h3>
-                            <p class="preview-role-summary" id="preview-role-summary">
-                                Tailored for Full-Stack & Software Engineering positions. Highlights production platform development for ENX Money at Enterprenex, Node.js, Express, React.js, MySQL, JWT authentication, and REST APIs.
+                            <h3 class="preview-role-heading">Software Developer</h3>
+                            <p class="preview-role-summary">
+                                Tailored for Full-Stack & Software Engineering positions. Highlights production platform development for <strong>ENX Money</strong> at Enterprenex Solutions, Node.js, Express.js, React.js, MySQL, JWT authentication, and REST APIs.
                             </p>
-                            <div class="preview-chips-container" id="preview-chips-container">
+                            <div class="preview-chips-container">
+                                <span class="preview-skill-tag">Full-Stack Development</span>
                                 <span class="preview-skill-tag">Node.js</span>
                                 <span class="preview-skill-tag">Express.js</span>
                                 <span class="preview-skill-tag">React.js</span>
                                 <span class="preview-skill-tag">MySQL</span>
                                 <span class="preview-skill-tag">MongoDB</span>
-                                <span class="preview-skill-tag">JWT Auth</span>
                                 <span class="preview-skill-tag">REST APIs</span>
+                                <span class="preview-skill-tag">JWT Auth</span>
+                                <span class="preview-skill-tag">Python</span>
                                 <span class="preview-skill-tag">Git Workflows</span>
                             </div>
-                            <div class="preview-file-path-box" id="preview-file-path">
+                            <div class="preview-file-path-box">
                                 <i class="fa-solid fa-file-pdf"></i> public/resumes/Revanth_Software_Developer_Resume.pdf
                             </div>
                         </div>
 
-                        <div>
-                            <a href="public/resumes/Revanth_Software_Developer_Resume.pdf" download="Revanth_Software_Developer_Resume.pdf" class="btn btn-primary" id="preview-download-btn" style="width: 100%;">
-                                <i class="fa-solid fa-arrow-down"></i> Download Software Developer Resume
+                        <div class="resume-card-actions">
+                            <a href="public/resumes/Revanth_Software_Developer_Resume.pdf" download="Revanth_Software_Developer_Resume.pdf" class="btn btn-primary" style="flex: 1;">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Download Software Developer Resume (PDF)</span>
+                            </a>
+                            <a href="public/resumes/Revanth_Software_Developer_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                <span>View in Browser</span>
                             </a>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Direct 1-Click Download Strip -->
-                <div class="direct-downloads-row reveal-on-scroll">
-                    <span class="direct-downloads-title"><i class="fa-solid fa-bolt"></i> Direct 1-Click Downloads:</span>
-                    <div class="direct-links-group">
-                        <a href="public/resumes/Revanth_Software_Developer_Resume.pdf" download="Revanth_Software_Developer_Resume.pdf" class="direct-role-link">
-                            <i class="fa-solid fa-laptop-code"></i> Software Dev
-                        </a>
-                        <a href="public/resumes/Revanth_AI_Developer_Resume.pdf" download="Revanth_AI_Developer_Resume.pdf" class="direct-role-link">
-                            <i class="fa-solid fa-brain"></i> AI Dev
-                        </a>
-                        <a href="public/resumes/Revanth_ML_Resume_Updated.pdf" download="Revanth_ML_Resume_Updated.pdf" class="direct-role-link">
-                            <i class="fa-solid fa-network-wired"></i> ML Engineer
-                        </a>
-                        <a href="public/resumes/Revanth_Data_Analyst_Resume_Updated.pdf" download="Revanth_Data_Analyst_Resume_Updated.pdf" class="direct-role-link">
-                            <i class="fa-solid fa-chart-pie"></i> Data Analyst
-                        </a>
-                        <a href="public/resumes/Revanth_UI_Resume_Updated.pdf" download="Revanth_UI_Resume_Updated.pdf" class="direct-role-link">
-                            <i class="fa-solid fa-palette"></i> UI / Frontend
-                        </a>
                     </div>
                 </div>
             </div>
